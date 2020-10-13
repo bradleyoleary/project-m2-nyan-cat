@@ -57,7 +57,12 @@ class Engine {
     // We check if the player is dead. If he is, we alert the user
     // and return from the method (Why is the return statement important?)
     if (this.isPlayerDead()) {
-      window.alert('Game over');
+      //Impliment restart button when player lises
+      const playerLost = document.createElement("button");
+       playerLost.id = "playerLost";
+       playerLost.innerText = "Resart!";
+       playerLost.addEventListener("click", userPlaying);
+       document.body.appendChild(playerLost);
       return;
     }
 
@@ -68,6 +73,27 @@ class Engine {
   // This method is not implemented correctly, which is why
   // the burger never dies. In your exercises you will fix this method.
   isPlayerDead = () => {
-    return false;
+    //Loop through all enemies using the "some" arr method. "Some" method will stop the loop as soon as turns true
+    return this.enemies.some((enemy) => {
+      //console.log(this.player)
+      //console.log(this.enemies)
+      //Bottom of the enemy Y axis position 
+      let enemyBottomY = enemy.y + ENEMY_HEIGHT;
+      //Top of player Y axis position
+      let playerTopY = this.player.y;
+      //Check if the enemy is matching the players y coordinates
+      let checkCollisionX = this.player.x === enemy.x;
+      //Check if the enemys y position is greater than or equal to the players y position
+      let checkCollisionY = enemyBottomY >= playerTopY && enemyBottomY <= GAME_HEIGHT;
+      //Create if statement for collisions
+      if (checkCollisionX && checkCollisionY) {
+        //Player and enemy have not collided (yet!)
+        return true;
+      }
+      else {
+        //Player and enemy collided
+        return false;
+      };
+    });
   };
 }

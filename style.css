@@ -1,0 +1,47 @@
+#startGame {
+    background-color: rgb(0, 255, 21);
+    border: none;
+    font-family: "Orbitron", sans-serif;
+    color: white;
+    width: 300px;
+    top: 260px;
+    left: 248px;
+    position: absolute;
+    font-size: 3rem;
+    padding: 10px;
+    border-radius: 36px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 500;
+    box-shadow: 0px 0px 56px 20px rgba(0, 255, 21, 0.653);
+}
+
+#playerLost {
+    background-color: rgb(255, 47, 0);
+    border: none;
+    font-family: "Orbitron", sans-serif;
+    color: white;
+    width: 300px;
+    top: 260px;
+    left: 248px;
+    position: absolute;
+    font-size: 3rem;
+    padding: 10px;
+    border-radius: 36px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 500;
+    box-shadow: 0px 0px 56px 20px rgba(255, 47, 0, 0.797);
+}
+
+.scoreBoard {
+   font-family: "Orbitron", sans-serif;
+   color: rgb(0, 255, 21);
+   width: 250px;
+   top: 0px;
+   left: 18px;
+   position: absolute;
+   font-size: 2rem;
+   padding: 10px;
+   z-index: 500;
+  }
